@@ -1,6 +1,9 @@
 # ollama-intel-gpu
 
-Using Ollama for Intel based GPUs is not as straight forward as other natively Ollama supported platforms.  As a workaround, this repo provides a quick sample showing the use of Ollama built with support for Intel ARC GPU based from the information provided by the references bellow.
+Using Ollama for Intel based GPUs is not as straight forward as other natively Ollama supported platforms.  As a workaround, this repo provides a quick sample showing the use of Ollama built with support for Intel ARC GPU based from the information provided by the references bellow.  Run the recently released [Meta llama3](https://llama.meta.com/llama3) or [Microsoft phi3](https://news.microsoft.com/source/features/ai/the-phi-3-small-language-models-with-big-potential) models on your local Intel ARC GPU based PC.
+
+## Screenshot
+![screenshot](doc/screenshot.png)
 
 # Prerequisites
 * Ubuntu 23.04 or newer (for Intel ARC GPU kernel driver support)
