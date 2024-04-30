@@ -1,6 +1,5 @@
 FROM ubuntu:jammy
 
-ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=america/los_angeles
 
 # Install prerequisite packages

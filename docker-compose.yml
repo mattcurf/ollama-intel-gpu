@@ -15,7 +15,7 @@ services:
     environment:
       - DISPLAY=${DISPLAY}
   ollama-webui:
-    image: ghcr.io/open-webui/open-webui
+    image: ghcr.io/open-webui/open-webui:git-c9589e2
     container_name: ollama-webui
     volumes:
       - ollama-webui:/app/backend/data

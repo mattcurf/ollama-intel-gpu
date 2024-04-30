@@ -6,7 +6,7 @@ Using Ollama for Intel based GPUs is not as straight forward as other natively O
 ![screenshot](doc/screenshot.png)
 
 # Prerequisites
-* Ubuntu 23.04 or newer (for Intel ARC GPU kernel driver support)
+* Ubuntu 23.04 or newer (for Intel ARC GPU kernel driver support. Tested with Ubuntu 23.10)
 * Installed Docker and Docker-compose tools
 * Intel ARC series GPU (tested with Intel ARC A770 16GB)
  
