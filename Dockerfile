@@ -40,6 +40,8 @@ ENV SYCL_CACHE_PERSISTENT=1
 ENV ZES_ENABLE_SYSMAN=1
 ENV OLLAMA_NUM_GPU=999
 ENV OLLAMA_HOST 0.0.0.0:11434
+ENV NEOReadDebugKeys=1
+ENV OverrideGpuAddressSpace=48
 
 COPY _init.sh /usr/share/lib/init_workspace.sh
 COPY _run.sh /usr/share/lib/run_workspace.sh
