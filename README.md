@@ -6,9 +6,9 @@ Using Ollama for Intel based GPUs is not as straight forward as other natively O
 ![screenshot](doc/screenshot.png)
 
 # Prerequisites
-* Ubuntu 23.04 or newer (for Intel ARC GPU kernel driver support. Tested with Ubuntu 23.10), or Windows 11 with WSL2 (graphics driver [101.5445](https://www.intel.com/content/www/us/en/download/785597/intel-arc-iris-xe-graphics-windows.html) or newer)
+* Ubuntu 24.04 or newer (for Intel ARC GPU kernel driver support. Tested with Ubuntu 24.04), or Windows 11 with WSL2 (graphics driver [101.5445](https://www.intel.com/content/www/us/en/download/785597/intel-arc-iris-xe-graphics-windows.html) or newer)
 * Installed Docker and Docker-compose tools (for Linux) or Docker Desktop (for Windows)
-* Intel ARC series GPU (tested with Intel ARC A770 16GB)
+* Intel ARC series GPU (tested with Intel ARC A770 16GB and Intel(R) Core(TM) Ultra 5 125H integrated GPU)
  
 # Usage
 
@@ -31,7 +31,7 @@ $ docker-compose -f docker-compose-wsl2.yml up
 Then launch your web browser to http://localhost:3000 to launch the web ui.  Create a local OpenWeb UI credential, then click the settings icon in the top right of the screen, then select 'Models', then click 'Show', then download a model like 'llama3:8b-instruct-q8_0' for Intel ARC A770 16GB VRAM
 
 # Known issues
-* No effort has been made to prune the packages pulled into the Ollama docker image for Intel GPU
+* Little effort has been made to prune the packages pulled into the Ollama docker image for Intel GPU
 
 # References
 * https://dgpu-docs.intel.com/driver/client/overview.html 
