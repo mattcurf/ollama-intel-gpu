@@ -1,2 +1,2 @@
 source /usr/share/lib/init_workspace.sh
-/workspace/ollama serve
+/usr/local/lib/python3.10/dist-packages/bigdl/cpp/libs/ollama serve
