@@ -10,6 +10,8 @@ RUN apt update && \
     gnupg \
     wget \
     curl \
+    python3 \
+    python3-pip \
     ocl-icd-libopencl1
 
 # Intel GPU compute user-space drivers
@@ -34,21 +36,21 @@ RUN wget -qO - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-P
    tee /etc/apt/sources.list.d/oneAPI.list && \
   apt update && \
   apt install --no-install-recommends -q -y \
-  intel-oneapi-runtime-libs
+  intel-basekit
 
 # Required oneAPI environment variables
 ENV USE_XETLA=OFF
 ENV SYCL_PI_LEVEL_ZERO_USE_IMMEDIATE_COMMANDLISTS=1
 ENV SYCL_CACHE_PERSISTENT=1
 
-# Ollama
-RUN curl -fsSL https://ollama.com/install.sh | sh 
+COPY _init.sh /usr/share/lib/init_workspace.sh
+COPY _run.sh /usr/share/lib/run_workspace.sh
+
+# Ollama via ipex-llm 
+RUN pip3 install --pre --upgrade ipex-llm[cpp] 
 
 ENV OLLAMA_NUM_GPU=999
 ENV OLLAMA_HOST=0.0.0.0:11434
 
-# https://github.com/ollama/ollama/issues/1590
-ENV OLLAMA_INTEL_GPU=1
-
-ENTRYPOINT ["/usr/local/bin/ollama", "serve"]
+ENTRYPOINT ["/bin/bash", "/usr/share/lib/run_workspace.sh"]
 
