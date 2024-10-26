@@ -36,7 +36,19 @@ RUN wget -qO - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-P
    tee /etc/apt/sources.list.d/oneAPI.list && \
   apt update && \
   apt install --no-install-recommends -q -y \
-  intel-basekit
+    intel-oneapi-common-vars=2024.0.0-49406 \
+    intel-oneapi-common-oneapi-vars=2024.0.0-49406 \
+    intel-oneapi-compiler-dpcpp-cpp=2024.0.2-49895 \
+    intel-oneapi-dpcpp-ct=2024.0.0-49381 \
+    intel-oneapi-mkl=2024.0.0-49656 \
+    intel-oneapi-mpi=2021.11.0-49493 \
+    intel-oneapi-dal=2024.0.1-25 \
+    intel-oneapi-ippcp=2021.9.1-5 \
+    intel-oneapi-ipp=2021.10.1-13 \
+    intel-oneapi-tlt=2024.0.0-352 \
+    intel-oneapi-ccl=2021.11.2-5 \
+    intel-oneapi-dnnl=2024.0.0-49521 \
+    intel-oneapi-tcm-1.0=1.0.0-435
 
 # Required oneAPI environment variables
 ENV USE_XETLA=OFF
