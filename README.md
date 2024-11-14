@@ -30,9 +30,6 @@ $ docker-compose -f docker-compose-wsl2.yml up
 
 Then launch your web browser to http://localhost:3000 to launch the web ui.  Create a local OpenWeb UI credential, then click the settings icon in the top right of the screen, then select 'Models', then click 'Show', then download a model like 'llama3.1:8b-instruct-q8_0' for Intel ARC A770 16GB VRAM
 
-# Known issues
-* Little effort has been made to prune the packages pulled into the Ollama docker image for Intel GPU
-
 # References
 * https://dgpu-docs.intel.com/driver/client/overview.html
 * https://ipex-llm.readthedocs.io/en/latest/doc/LLM/Quickstart/ollama_quickstart.html
