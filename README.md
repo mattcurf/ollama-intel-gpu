@@ -6,10 +6,12 @@ This repo illlustrates the use of Ollama with support for Intel ARC GPU based vi
 ![screenshot](doc/screenshot.png)
 
 # Prerequisites
-* Ubuntu 24.04 or newer (for Intel ARC GPU kernel driver support. Tested with Ubuntu 24.04), or Windows 11 with WSL2 (graphics driver [101.5445](https://www.intel.com/content/www/us/en/download/785597/intel-arc-iris-xe-graphics-windows.html) or newer)
+* Ubuntu 24.04 or newer (for Intel ARC GPU kernel driver support. Tested with Ubuntu 24.04), or Windows 11 with WSL2 (graphics driver [101.5445](https://www.intel.com/content/www/us/en/download/785597/intel-arc-iris-xe-graphics-windows.html) or newer). 
 * Installed Docker and Docker-compose tools (for Linux) or Docker Desktop (for Windows)
-* Intel ARC series GPU (tested with Intel ARC A770 16GB and Intel(R) Core(TM) Ultra 5 125H integrated GPU)
- 
+* Intel ARC series GPU. Tested with Intel ARC A770 16GB, Intel(R) Core(TM) Ultra 5 125H integrated GPU (Meteor Lake), and Intel(R) Core(TM) Intel Ultra 7 258V integrated GPU (Lunar Lake)
+
+*Note:* This branch uses the upstream ipex container published by Intel.  See the alternate branch [alternate_base_image](https://github.com/mattcurf/ollama-intel-gpu/tree/alternate_base_image) for an equivalent Dockerfile which builds everything from the published packages directly.
+
 # Usage
 
 The following will build the Ollama with Intel ARC GPU support, and compose those with the public docker image based on OpenWEB UI from https://github.com/open-webui/open-webui
