@@ -30,6 +30,11 @@ $ cd ollama-intel-gpu
 $ docker-compose -f docker-compose-wsl2.yml up 
 ```
 
+*Note:* you will see the following message.  This is expected and harmless, as the docker image 'ollama-intel-gpu' is built locally.
+```
+ollama-intel-gpu Warning pull access denied for ollama-intel-gpu, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+```
+
 Then launch your web browser to http://localhost:3000 to launch the web ui.  Create a local OpenWeb UI credential, then click the settings icon in the top right of the screen, then select 'Models', then click 'Show', then download a model like 'llama3.1:8b-instruct-q8_0' for Intel ARC A770 16GB VRAM
 
 # References
