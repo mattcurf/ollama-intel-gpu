@@ -10,10 +10,7 @@ services:
     devices:
       - /dev/dri:/dev/dri
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
       - ollama-intel-gpu:/root/.ollama
-    environment:
-      - DISPLAY=${DISPLAY}
   ollama-webui:
     image: ghcr.io/open-webui/open-webui
     container_name: ollama-webui
