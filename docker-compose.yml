@@ -11,6 +11,7 @@ services:
       - ollama-intel-gpu:/root/.ollama
     environment:
       - ONEAPI_DEVICE_SELECTOR=level_zero:0
+      - IPEX_LLM_NUM_CTX=16384
   ollama-webui:
     image: ghcr.io/open-webui/open-webui
     container_name: ollama-webui
