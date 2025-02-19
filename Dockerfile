@@ -10,8 +10,6 @@ RUN apt update && \
     wget \
     ocl-icd-libopencl1
 
-#    gnupg \
-
 # Intel GPU compute user-space drivers
 RUN mkdir -p /tmp/gpu && \
  cd /tmp/gpu && \
