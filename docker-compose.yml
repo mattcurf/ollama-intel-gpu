@@ -1,19 +1,16 @@
-version: "3.9"
 services:
   ollama-intel-gpu:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: ollama-intel-gpu
-    image: ollama-intel-gpu:latest
     restart: always
     devices:
       - /dev/dri:/dev/dri
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
       - ollama-intel-gpu:/root/.ollama
     environment:
-      - DISPLAY=${DISPLAY}
+      - ONEAPI_DEVICE_SELECTOR=level_zero:0
   ollama-webui:
     image: ghcr.io/open-webui/open-webui
     container_name: ollama-webui
