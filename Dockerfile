@@ -24,8 +24,8 @@ RUN mkdir -p /tmp/gpu && \
 
 # Install Ollama Portable Zip 
 RUN cd / && \
-  wget https://github.com/intel/ipex-llm/releases/download/v2.2.0-nightly/ollama-0.5.4-ipex-llm-2.2.0b20250218-ubuntu.tgz && \
-  tar xvf ollama-0.5.4-ipex-llm-2.2.0b20250218-ubuntu.tgz --strip-components=1 -C /
+  wget https://github.com/mattcurf/ollama-intel-gpu/releases/download/v0.0.1/ollama-0.5.4-ipex-llm-2.2.0b20250220-ubuntu.tgz && \
+  tar xvf ollama-0.5.4-ipex-llm-2.2.0b20250220-ubuntu.tgz --strip-components=1 -C /
 
 ENV OLLAMA_HOST=0.0.0.0:11434
 
