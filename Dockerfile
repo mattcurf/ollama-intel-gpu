@@ -1,7 +1,7 @@
 FROM ubuntu:24.04
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=america/los_angeles
-ARG IPEXLLM_PORTABLE_ZIP_FILENAME=ollama-ipex-llm-2.2.0b20250313-ubuntu.tgz
+
 
 # Base packages
 RUN apt update && \
@@ -23,9 +23,12 @@ RUN mkdir -p /tmp/gpu && \
  dpkg -i *.deb && \
  rm *.deb
 
-# Install Ollama Portable Zip 
+# Install Ollama Portable Zip (with cached default)
+ARG IPEXLLM_RELEASE_REPO=mattcurf/ollama-intel-gpu
+ARG IPEXLLM_RELEASE_VERSON=v0.0.1 
+ARG IPEXLLM_PORTABLE_ZIP_FILENAME=ollama-0.5.4-ipex-llm-2.2.0b20250220-ubuntu.tgz
 RUN cd / && \
-  wget https://github.com/intel/ipex-llm/releases/download/v2.2.0-nightly/${IPEXLLM_PORTABLE_ZIP_FILENAME} && \
+  wget https://github.com/${IPEXLLM_RELEASE_REPO}/releases/download/${IPEXLLM_RELEASE_VERSON}/${IPEXLLM_PORTABLE_ZIP_FILENAME} && \
   tar xvf ${IPEXLLM_PORTABLE_ZIP_FILENAME} --strip-components=1 -C /
 
 ENV OLLAMA_HOST=0.0.0.0:11434

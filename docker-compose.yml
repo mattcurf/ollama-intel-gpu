@@ -4,6 +4,8 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
+        IPEXLLM_RELEASE_REPO: intel/ipex-llm
+        IPEXLLM_RELEASE_VERSON: v2.2.0-nightly
         IPEXLLM_PORTABLE_ZIP_FILENAME: ollama-ipex-llm-2.2.0b20250313-ubuntu.tgz # update from https://github.com/intel/ipex-llm/releases/tag/v2.2.0-nightly
     container_name: ollama-intel-gpu
     restart: always
