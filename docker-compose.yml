@@ -3,6 +3,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        IPEXLLM_RELEASE_REPO: mattcurf/ollama-intel-gpu
+        IPEXLLM_RELEASE_VERSON: v0.0.1
+        IPEXLLM_PORTABLE_ZIP_FILENAME: ollama-0.5.4-ipex-llm-2.2.0b20250220-ubuntu.tgz
     container_name: ollama-intel-gpu
     restart: always
     devices:
