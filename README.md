@@ -31,7 +31,18 @@ Then launch your web browser to http://localhost:3000 to launch the web ui.  Cre
 
 ## Update to the latest IPEX-LLM Portable Zip Version
 
-To update to the latest portable zip version of IPEX-LLM's Ollama, update the compose file's `IPEXLLM_PORTABLE_ZIP_FILENAME` build argument to the latest `ollama-*.tgz` release from https://github.com/intel/ipex-llm/releases/tag/v2.2.0-nightly , then rebuild the image.
+To update to the latest portable zip version of IPEX-LLM's Ollama, update the compose file with the build arguments shown below, using the latest `ollama-*.tgz` release from https://github.com/intel/ipex-llm/releases/tag/v2.2.0-nightly , then rebuild the image.
+
+```yaml
+ollama-intel-gpu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        IPEXLLM_RELEASE_REPO: intel/ipex-llm
+        IPEXLLM_RELEASE_VERSON: v2.2.0-nightly
+        IPEXLLM_PORTABLE_ZIP_FILENAME: ollama-ipex-llm-2.2.0b20250313-ubuntu.tgz
+``` 
 
 # References
 * https://dgpu-docs.intel.com/driver/client/overview.html
