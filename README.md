@@ -46,4 +46,5 @@ ollama-intel-gpu:
 
 # References
 * https://dgpu-docs.intel.com/driver/client/overview.html
-* https://github.com/intel/ipex-llm/blob/main/docs/mddocs/Quickstart/ollama_portablze_zip_quickstart.md
+* https://github.com/intel/ipex-llm/blob/main/docs/mddocs/Quickstart/llamacpp_portable_zip_gpu_quickstart.md
+* https://github.com/intel/ipex-llm/releases/download/v2.2.0-nightly/ollama-ipex-llm-2.2.0b20250313-ubuntu.tgz
