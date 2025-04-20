@@ -23,10 +23,10 @@ RUN mkdir -p /tmp/gpu && \
  dpkg -i *.deb && \
  rm *.deb
 
-# Install Ollama Portable Zip (with cached default)
-ARG IPEXLLM_RELEASE_REPO=mattcurf/ollama-intel-gpu
-ARG IPEXLLM_RELEASE_VERSON=v0.0.1 
-ARG IPEXLLM_PORTABLE_ZIP_FILENAME=ollama-0.5.4-ipex-llm-2.2.0b20250220-ubuntu.tgz
+# Install Ollama Portable Zip
+ARG IPEXLLM_RELEASE_REPO=intel/ipex-llm
+ARG IPEXLLM_RELEASE_VERSON=v2.2.0
+ARG IPEXLLM_PORTABLE_ZIP_FILENAME=ollama-ipex-llm-2.2.0-ubuntu.tgz
 RUN cd / && \
   wget https://github.com/${IPEXLLM_RELEASE_REPO}/releases/download/${IPEXLLM_RELEASE_VERSON}/${IPEXLLM_PORTABLE_ZIP_FILENAME} && \
   tar xvf ${IPEXLLM_PORTABLE_ZIP_FILENAME} --strip-components=1 -C /
