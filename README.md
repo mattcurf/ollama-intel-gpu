@@ -24,8 +24,9 @@ $ git clone https://github.com/mattcurf/ollama-intel-gpu
 $ cd ollama-intel-gpu
 $ docker compose up 
 ```
+*Note:* On some platforms or versions of docker, the command above may instead be 'docker-compose'.
 
-*Note:* If you have multiple GPU's installed (like integrated and discrete), set the ONEAPI_DEVICE_DELECTOR environment variable in the docker compose file to select the intended device to use.
+*Note 2:* If you have multiple GPU's installed (like integrated and discrete), set the ONEAPI_DEVICE_DELECTOR environment variable in the docker compose file to select the intended device to use.
 
 Then launch your web browser to http://localhost:3000 to launch the web ui.  Create a local OpenWeb UI credential, then click the settings icon in the top right of the screen, then select 'Models', then click 'Show', then download a model like 'llama3.1:8b-instruct-q8_0' for Intel ARC A770 16GB VRAM
 
