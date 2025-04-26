@@ -29,7 +29,8 @@ ARG IPEXLLM_RELEASE_VERSON=v2.2.0
 ARG IPEXLLM_PORTABLE_ZIP_FILENAME=ollama-ipex-llm-2.2.0-ubuntu.tgz
 RUN cd / && \
   wget https://github.com/${IPEXLLM_RELEASE_REPO}/releases/download/${IPEXLLM_RELEASE_VERSON}/${IPEXLLM_PORTABLE_ZIP_FILENAME} && \
-  tar xvf ${IPEXLLM_PORTABLE_ZIP_FILENAME} --strip-components=1 -C /
+  tar xvf ${IPEXLLM_PORTABLE_ZIP_FILENAME} --strip-components=1 -C / && \
+  rm ${IPEXLLM_PORTABLE_ZIP_FILENAME}
 
 ENV OLLAMA_HOST=0.0.0.0:11434
 
